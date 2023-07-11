@@ -277,3 +277,7 @@ pip install torch torchvision
 ```
 
 Remember to follow the instructions specific to your operating system and Python environment from the [official PyTorch website](https://pytorch.org/).
+
+# Add pytorch to requirements.txt
+* https://stackoverflow.com/questions/60912744/install-pytorch-from-requirements-txt
+* *Ended up just adding `torch` and `torchvision` on separate lines in `requirements.txt`.*
