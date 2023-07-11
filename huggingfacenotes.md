@@ -1,7 +1,7 @@
 # Hugging Face notes <!-- omit in toc -->
 
 - [ChatGPT-4](#chatgpt-4)
-  - [Explain hugging fade](#explain-hugging-fade)
+  - [Explain hugging face](#explain-hugging-face)
   - [I got a runtime error](#i-got-a-runtime-error)
   - [No model was supplied](#no-model-was-supplied)
 - [pip list](#pip-list)
@@ -13,7 +13,7 @@
 # ChatGPT-4
 *Tue, Jul 11, 2023* | [back](README.md)
 
-## Explain hugging fade
+## Explain hugging face
 Explain how to use hugging face using working samples in python.
 
 ---
