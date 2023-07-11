@@ -9,6 +9,7 @@
 - [More ChatGPT-4](#more-chatgpt-4)
   - [What do these console messages mean?](#what-do-these-console-messages-mean)
   - [Should I install Pytorch?](#should-i-install-pytorch)
+- [Add pytorch to requirements.txt](#add-pytorch-to-requirementstxt)
 
 # ChatGPT-4
 *Tue, Jul 11, 2023* | [back](README.md)
