@@ -1,12 +1,13 @@
 # Programming notes
 
 - [Programming notes](#programming-notes)
-  - [pip list](#pip-list)
-  - [Available pipeline tasks](#available-pipeline-tasks)
-  - [Add pytorch to requirements.txt](#add-pytorch-to-requirementstxt)
+  - [`pip list`](#pip-list)
+  - [Resources](#resources)
 
-## pip list
+## `pip list`
 
+<details>
+  <summary>Full package list</summary>
 Install requirements and the following will be installed.
 
 ```
@@ -85,15 +86,12 @@ wrapt                   1.15.0
 xformers                0.0.20
 yarl                    1.9.2
 ```
+</details>
 
-[back](README.md)
-
-## Available pipeline tasks
-
-```
-available tasks are ['audio-classification', 'automatic-speech-recognition', 'conversational', 'depth-estimation', 'document-question-answering', 'feature-extraction', 'fill-mask', 'image-classification', 'image-segmentation', 'image-to-text', 'mask-generation', 'ner', 'object-detection', 'question-answering', 'sentiment-analysis', 'summarization', 'table-question-answering', 'text-classification', 'text-generation', 'text2text-generation', 'token-classification', 'translation', 'video-classification', 'visual-question-answering', 'vqa', 'zero-shot-audio-classification', 'zero-shot-classification', 'zero-shot-image-classification', 'zero-shot-object-detection', 'translation_XX_to_YY']"
-```
-
-## Add pytorch to requirements.txt
-* https://stackoverflow.com/questions/60912744/install-pytorch-from-requirements-txt
-* *Ended up just adding `torch` and `torchvision` on separate lines in `requirements.txt`.*
+## Resources
+* Available pipeline tasks
+  ```
+  available tasks are ['audio-classification', 'automatic-speech-recognition', 'conversational', 'depth-estimation', 'document-question-answering', 'feature-extraction', 'fill-mask', 'image-classification', 'image-segmentation', 'image-to-text', 'mask-generation', 'ner', 'object-detection', 'question-answering', 'sentiment-analysis', 'summarization', 'table-question-answering', 'text-classification', 'text-generation', 'text2text-generation', 'token-classification', 'translation', 'video-classification', 'visual-question-answering', 'vqa', 'zero-shot-audio-classification', 'zero-shot-classification', 'zero-shot-image-classification', 'zero-shot-object-detection', 'translation_XX_to_YY']"
+  ```
+* Add pytorch to requirements.txt ([stackoverflow answer](https://stackoverflow.com/questions/60912744/install-pytorch-from-requirements-txt)). *Instead, I ended up just adding `torch` and `torchvision` on separate lines in `requirements.txt`.*
+* [Getting Started With Hugging Face in 15 Minutes | Transformers, Pipeline, Tokenizer, Models](https://www.youtube.com/watch?v=QEaBAZQCtwE) from AssemblyAI (YouTube)
