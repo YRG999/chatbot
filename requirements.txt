@@ -1,2 +1,7 @@
 openai
 nltk
+transformers
+tensorflow
+torch 
+torchvision
+xformers

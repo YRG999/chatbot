@@ -12,3 +12,5 @@ Install the requirements
    ```bash
    $ pip install -r requirements.txt
    ```
+
+[Hugging Face notes](huggingfacenotes.md)
