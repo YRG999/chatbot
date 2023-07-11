@@ -13,8 +13,6 @@ Install the requirements
    $ pip install -r requirements.txt
    ```
 
-[Hugging Face notes](huggingfacenotes.md)
-
 ## Doc
 * [ChatGPT notes](doc/ChatGPTnotes.md)
 * [Programming notes](doc/Programmingnotes.md)
