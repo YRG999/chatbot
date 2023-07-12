@@ -1,14 +1,14 @@
 # Programming notes
 
-- [Programming notes](#programming-notes)
-  - [`pip list`](#pip-list)
-  - [Resources](#resources)
+* `chatbot.py` -- I wanted to create an OpenAI chatbot that [saved context](#resources), so I looked into compressing input and output to send it in future responses. This introduced me to [Python’s Natural Language Toolkit (NLTK)](https://www.nltk.org/). I got the first step done, compressing the input and output, but not the next step of sending the compressed context with the next prompt.
+* `textclassify.py` and `textcomplete.py` -- I wanted to learn [Hugging Face](https://huggingface.co/) and asked [ChatGPT](doc/ChatGPTnotes.md) for help; these are the programs it suggested creating.
 
 ## `pip list`
 
+Install requirements and the following will be installed.
+
 <details>
   <summary>Full package list</summary>
-Install requirements and the following will be installed.
 
 ```
 Package                 Version
@@ -86,14 +86,18 @@ wrapt                   1.15.0
 xformers                0.0.20
 yarl                    1.9.2
 ```
+
 </details>
 
 ## Resources
+* Saving context when using OpenAI
+  * [How do you maintain historical context in repeat API calls?](https://community.openai.com/t/how-do-you-maintain-historical-context-in-repeat-api-calls/34395/15)
+  * [How Does the ChatGPT Web Application Retain Context Information to Achieve Infinite Conversations?](https://community.openai.com/t/how-does-the-chatgpt-web-application-retain-context-information-to-achieve-infinite-conversations/209759)
 * Available pipeline tasks (returned in an error when I mispelled one)
   ```
   KeyError: "Unknown task text-generatio, available tasks are ['audio-classification', 'automatic-speech-recognition', 'conversational', 'depth-estimation', 'document-question-answering', 'feature-extraction', 'fill-mask', 'image-classification', 'image-segmentation', 'image-to-text', 'mask-generation', 'ner', 'object-detection', 'question-answering', 'sentiment-analysis', 'summarization', 'table-question-answering', 'text-classification', 'text-generation', 'text2text-generation', 'token-classification', 'translation', 'video-classification', 'visual-question-answering', 'vqa', 'zero-shot-audio-classification', 'zero-shot-classification', 'zero-shot-image-classification', 'zero-shot-object-detection', 'translation_XX_to_YY']"
   ```
   - For details, see [Quick tour: Pipeline](https://huggingface.co/docs/transformers/main/en/quicktour#pipeline).
-* Add pytorch to requirements.txt ([stackoverflow answer](https://stackoverflow.com/questions/60912744/install-pytorch-from-requirements-txt)). *Instead, I ended up just adding `torch` and `torchvision` on separate lines in `requirements.txt`.*
+* [Install PyTorch from requirements.txt](https://stackoverflow.com/questions/60912744/install-pytorch-from-requirements-txt) -- Instead, I ended up just adding `torch` and `torchvision` on separate lines in `requirements.txt`.
 * [Getting Started With Hugging Face in 15 Minutes | Transformers, Pipeline, Tokenizer, Models](https://www.youtube.com/watch?v=QEaBAZQCtwE) from AssemblyAI (YouTube)
 * [How to wrap long lines of code in GitHub](https://stackoverflow.com/questions/41238148/how-to-wrap-long-lines-inside-of-markdown-code-in-github-and-gitlab-issu) -- short answer, you can't.
