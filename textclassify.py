@@ -6,7 +6,7 @@ from transformers import pipeline
 classifier = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
 
 # Use the model to classify a piece of text
-# result = classifier("I love this movie!")[0]
+result = classifier("I love this movie!")[0]
 
 # Output the classification results
 print(f"label: {result['label']}, with score: {result['score']}")

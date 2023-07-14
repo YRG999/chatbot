@@ -2,3 +2,4 @@ _notes/
 venv/
 .DS_STORE
 .env
+.vscode/
