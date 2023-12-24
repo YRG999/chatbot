@@ -5,3 +5,4 @@ tensorflow
 torch 
 torchvision
 xformers
+gradio
