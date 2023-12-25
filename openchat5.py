@@ -14,7 +14,6 @@ headers = {
 
 conversation_history = []
 
-# Define a function `save_to_csv` that takes one argument `input_output`.
 def save_to_csv(input_output):
     """
     Saves the given input-output data as rows in a CSV file named 'output.csv'. Takes one argument `input_output`, which can be either an iterable (like a single list) or an iterable of iterables (like a list containing multiple sub-lists).
