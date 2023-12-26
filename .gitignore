@@ -3,4 +3,4 @@ venv/
 .DS_STORE
 .env
 .vscode/
-output.csv
+output*
