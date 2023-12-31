@@ -1,6 +1,6 @@
-# chat6.py
-# Update to openchat5.py
-# Asks for a model name and uses it in the generate_response function to generate responses from the API and the save_to_csv function to save to a CSV with the model name appended.
+# chat9.py
+# Updated conversation history by using ollama's context parameter
+# https://github.com/jmorganca/ollama/blob/main/docs/api.md#generate-a-completion
 
 import requests
 import json
@@ -8,8 +8,25 @@ import gradio as gr
 import csv
 import datetime
 
+def list_ollama_models():
+    """
+    Lists locally available ollama models. https://github.com/jmorganca/ollama/blob/main/docs/api.md#list-local-models
+    """
+    url = "http://localhost:11434/api/tags"
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = json.loads(response.text)
+        models = data["models"]
+        for model in models:
+            print(model["name"])
+        # print(models)
+    else:
+        print("Error:", response.status_code, response.text)
+
+list_ollama_models()
+
 # Ask user for model name
-model_name = input("Enter the name of the model you want to use (e.g., 'codellama'): ")
+model_name = input("Enter the model to use (e.g., 'codellama' for 'codellama:latest'): ")
 
 url = "http://localhost:11434/api/generate"
 
@@ -17,7 +34,7 @@ headers = {
     'Content-Type': 'application/json',
 }
 
-conversation_history = []
+context = []
 
 def save_to_csv(input_output):
     """
@@ -42,14 +59,14 @@ def generate_response(input):
     Returns:
     The actual response from the API if it returns a status code 200 (success). Otherwise, it prints an error message and returns None.
     """
-    conversation_history.append(input)
 
-    full_prompt = "\n".join(conversation_history)
+    global context
 
     data = {
         "model": model_name,
         "stream": False,
-        "prompt": full_prompt,
+        "prompt": input,
+        "context": context
     }
 
     response = requests.post(url, headers=headers, data=json.dumps(data))
@@ -58,7 +75,7 @@ def generate_response(input):
         response_text = response.text
         data = json.loads(response_text)
         actual_response = data["response"]
-        conversation_history.append(actual_response)
+        context = data["context"]
 
         # Save input and output to CSV file
         save_to_csv([input, actual_response])
@@ -68,10 +85,25 @@ def generate_response(input):
         print("Error:", response.status_code, response.text)
         return None
 
-iface = gr.Interface(
-    fn=generate_response,
-    inputs=gr.Textbox(placeholder="Enter your prompt here..."),
-    outputs="text"
-)
+def clear_history():
+    """
+    Clears conversation history.
+    """
+    # global conversation_history
+    # conversation_history = []
+    global context
+    context = []
+    return None
 
-iface.launch()
+with gr.Blocks() as demo:
+    with gr.Row():
+        input_text = gr.Textbox(placeholder="Enter your prompt here...")
+        generate_button = gr.Button("Generate Response")
+        clear_button = gr.Button("Clear History")
+    output_text = gr.Textbox()
+
+    generate_button.click(generate_response, inputs=input_text, outputs=output_text)
+    clear_button.click(clear_history, inputs=None, outputs=output_text)
+
+demo.launch()
+

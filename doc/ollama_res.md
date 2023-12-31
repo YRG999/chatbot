@@ -12,3 +12,4 @@
 ## definitions
 * [What is quantization?](https://deci.ai/quantization-and-quantization-aware-training/#:~:text=Quantization%20is%20a%20common%20technique,rather%20than%20after%20the%20fact.)
 * [FLAN](https://blog.research.google/2021/10/introducing-flan-more-generalizable.html)
+* [ollama models](ollama_models.md)
