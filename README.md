@@ -29,9 +29,8 @@ Install the requirements
 * `textcomplete.py` - to completes a sentence.
 
 ## ollama
-*Requires [ollama](https://ollama.ai/) and the appropriate LLM.*
-* `openchat5.py` - uses ollama to create a local chatbot. Saves input & output to `output.csv`. Uses simplistic text history for context. Requires latest [mistral](https://ollama.ai/library/mistral) LLM.**
-* `chat-codellama.py` - uses ollama and [codellama](https://ollama.ai/library/codellama) LLM. Saves input & output to `output-codellama.csv`.
+*Requires [ollama](https://ollama.ai/) and at least one model installed.*
+* `chat9.py` - uses ollama to create a local chatbot. Lists models installed locally. Asks user enter the name of the model to use. Saves input & output to `output-{model_name}.csv`. Uses ollama `context` parameter for conversation history.
 
 ## Doc
 * [ChatGPT notes](doc/ChatGPTnotes.md)
