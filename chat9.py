@@ -89,8 +89,6 @@ def clear_history():
     """
     Clears conversation history.
     """
-    # global conversation_history
-    # conversation_history = []
     global context
     context = []
     return None
@@ -102,8 +100,9 @@ with gr.Blocks() as demo:
         clear_button = gr.Button("Clear History")
     output_text = gr.Textbox()
 
+    input_text.submit(generate_response, inputs=input_text, outputs=output_text)
     generate_button.click(generate_response, inputs=input_text, outputs=output_text)
     clear_button.click(clear_history, inputs=None, outputs=output_text)
+    # TODO: create clear textbox button
 
 demo.launch()
-

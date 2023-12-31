@@ -30,7 +30,7 @@ Install the requirements
 
 ## ollama
 *Requires [ollama](https://ollama.ai/) and at least one model installed.*
-* `chat9.py` - uses ollama to create a local chatbot. Lists models installed locally. Asks user enter the name of the model to use. Saves input & output to `output-{model_name}.csv`. Uses ollama `context` parameter for conversation history.
+* `chat9.py` - uses ollama to create a local chatbot. Lists models installed locally. Asks user to enter the name of the model to use. Saves input & output to `output-{model_name}.csv`. Uses ollama `context` parameter for conversation history.
 
 ## Doc
 * [ChatGPT notes](doc/ChatGPTnotes.md)
