@@ -19,20 +19,33 @@ Install the requirements
    ```
 
 ## OpenAI (not local)
-*Requires an [OpenAI API key](https://platform.openai.com/api-keys).*
-* `chatbot.py` - uses OpenAI and `nltk` to create a chatbot. Deprecated, uses old openai SDK.
-* `chatbot2.py` - needs to be updated to use new openai SDK.
+*Requires an [OpenAI API key](https://platform.openai.com/api-keys). See `.env_example` for details.*
+* `openaichatbot3.py` - Creates a chatbot using Flask. Saves conversation in session conversation history to file after logout. See previous files and chatbot notes for iterative design history.
 
-## Transformers
+## Transformers & llm
 *Uses the Python [transformers](https://pypi.org/project/transformers/) library.*
 * `textclassify.py` - for sentiment analysis.
 * `textcomplete.py` - to completes a sentence.
+* `llmtest.py` & `llmtest2.py` - testing [LLM CLI](https://llm.datasette.io).
 
 ## ollama
 *Requires [ollama](https://ollama.ai/) and at least one model installed.*
-* `chat9.py` - uses ollama to create a local chatbot. Lists models installed locally. Asks user to enter the name of the model to use. Saves input & output to `output-{model_name}.csv`. Uses ollama `context` parameter for conversation history.
+* `chat9.py` - uses ollama to create a local chatbot. 
+  * Lists models installed locally. 
+  * Asks user to enter the name of the model to use. 
+  * Saves input & output to `output-{model_name}.csv`. 
+  * Uses ollama `context` parameter for conversation history. 
+  * See [ollama_models](doc/ollama_models.md) for examples of models used. 
+  * *Inspired by `openchat_context.py`*
+
+## Utilities
+* `createKey.py` - creates a key to use for Flask sessions.
+* `filebot/addline` - file to parse GPT bulleted responses prior to saving conversation history.
 
 ## Doc
 * [ChatGPT notes](doc/ChatGPTnotes.md)
 * [Programming notes](doc/Programmingnotes.md)
-* [ollama resources](doc/ollama_res.md)
+* [Ollama resources](doc/ollama_res.md)
+* [Ollama models](doc/ollama_models.md)
+* [Chatbot_notes1](doc/Chatbot_notes1.md)
+* [Chatbot_notes2](doc/Chatbot_notes2.md)

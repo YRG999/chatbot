@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatGPT MVP Bot</title>
+    <style>
+        body {
+            background-color: #121212; /* Dark background */
+            color: #ffffff; /* Light text */
+            font-family: Arial, sans-serif; /* Optional: Font style */
+        }
+        textarea, input[type="submit"] {
+            background-color: #333333; /* Darker element backgrounds */
+            color: #ffffff; /* Light text */
+            border: none; /* Removing default border */
+            padding: 10px; /* Padding for better spacing */
+            margin: 5px 0; /* Margin for spacing */
+        }
+        textarea {
+            width: calc(100% - 20px); /* Full-width with padding adjustment */
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+            height: 100px; /* Fixed height for the textarea */
+        }
+        input[type="submit"] {
+            cursor: pointer; /* Changes cursor to pointer on hover */
+            transition: background-color 0.3s; /* Smooth transition for background color */
+        }
+        input[type="submit"]:hover {
+            background-color: #444444; /* Slightly lighter on hover */
+        }
+        .conversation-box {
+            width: calc(100% - 20px);
+            height: 500px; /* Adjust height as needed */
+            overflow-y: scroll; /* Makes the box scrollable */
+            border: 1px solid #333333;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #1a1a1a;
+        }
+        .message {
+            margin: 5px 0;
+        }
+        .button-style {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            text-align: center;
+            text-decoration: none; /* Remove underline from links */
+            font-size: 16px;
+            border-radius: 5px; /* Rounded corners */
+            border: none; /* No border */
+            cursor: pointer; /* Cursor changes to a hand icon */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        .button-style:hover {
+            background-color: #45a049; /* Darker shade of green */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function disableButton(btn){
+            btn.disabled = true;
+            btn.form.submit();
+        }
+    </script>
+    <h1>Chat with GPT</h1>
+    <form method="post">
+        <textarea name="user_input" placeholder="Your message"></textarea>
+        <input type="submit" value="Send" onclick="disableButton(this);">
+    </form>
+    <a href="{{ url_for('logout') }}" class="button-style">Logout</a>
+    <div class="conversation-box">
+        {% for message in conversation %}
+            <div class="message {{ message.role }}">
+                <strong>{{ message.role.title() }}:</strong> {{ message.content }}
+            </div>
+        {% endfor %}
+    </div>    
+</body>
+</html>

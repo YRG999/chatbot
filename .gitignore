@@ -1,6 +1,15 @@
-_notes/
+# system
 venv/
 .DS_STORE
 .env
 .vscode/
+
+# notes
+_notes/
 output*
+conversation_history*
+input*
+
+# utility
+flask_session/
+flagged/
