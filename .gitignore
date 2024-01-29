@@ -2,6 +2,7 @@
 venv/
 .DS_STORE
 .env
+__pycache__
 .vscode/
 
 # notes
@@ -13,3 +14,6 @@ input*
 # utility
 flask_session/
 flagged/
+
+# models
+models

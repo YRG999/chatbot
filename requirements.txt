@@ -6,3 +6,9 @@ flask
 python-dotenv
 Flask-Session
 llm
+ollama
+# llama-cpp-python
+# see install_llamacpp.sh to install with metal, or uncomment above for cpu only installation
+# https://python.langchain.com/docs/integrations/llms/llamacpp#installation-with-metal
+huggingface-hub
+langchain

@@ -23,10 +23,11 @@ Install the requirements
 * `openaichatbot3.py` - Creates a chatbot using Flask. Saves conversation in session conversation history to file after logout. See previous files and chatbot notes for iterative design history.
 
 ## Transformers & llm
-*Uses the Python [transformers](https://pypi.org/project/transformers/) library.*
-* `textclassify.py` - for sentiment analysis.
-* `textcomplete.py` - to completes a sentence.
+* *Uses the Python [transformers](https://pypi.org/project/transformers/) library.*
+  * `textclassify.py` - for sentiment analysis.
+  * `textcomplete.py` - to completes a sentence.
 * `llmtest.py` & `llmtest2.py` - testing [LLM CLI](https://llm.datasette.io).
+* `testllamacpp.py` - use `install_llamacpp.sh` to install on Apple Silicon.
 
 ## ollama
 *Requires [ollama](https://ollama.ai/) and at least one model installed.*
@@ -37,6 +38,7 @@ Install the requirements
   * Uses ollama `context` parameter for conversation history. 
   * See [ollama_models](doc/ollama_models.md) for examples of models used. 
   * *Inspired by `openchat_context.py`*
+* In progress: `chat10.py`, `chat10a.py`, `chat10b.py`
 
 ## Utilities
 * `createKey.py` - creates a key to use for Flask sessions.
