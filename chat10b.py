@@ -1,7 +1,6 @@
 # chat10b.py
 # chat9.py updated with https://ollama.ai/blog/python-javascript-libraries
-# uses a simple list for context as there isn't a way to send context using the python library.
-# asked question: https://github.com/ollama/ollama-python/issues/38
+# uses a simple list for context. See chat10c.py for more.
 
 import gradio as gr
 import csv
@@ -54,7 +53,7 @@ def generate_response(input):
     {
         'role': 'user',
         'content': appended_input,
-    },
+    }
     ])
 
     response = response['message']['content']

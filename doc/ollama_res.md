@@ -13,3 +13,10 @@
 * [What is quantization?](https://deci.ai/quantization-and-quantization-aware-training/#:~:text=Quantization%20is%20a%20common%20technique,rather%20than%20after%20the%20fact.)
 * [FLAN](https://blog.research.google/2021/10/introducing-flan-more-generalizable.html)
 * [ollama models](ollama_models.md)
+
+## more ollama doc
+* had to figure out what the response value was for the generate method. Found out it's response, so used response['response'] to get it.
+* https://github.com/ollama/ollama-python?tab=readme-ov-file
+* https://github.com/ollama/ollama/blob/main/docs/api.md
+* https://github.com/ollama/ollama/blob/main/docs/modelfile.md#valid-parameters-and-values
+* https://github.com/ollama/ollama/blob/main/docs/modelfile.md#system

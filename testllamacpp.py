@@ -1,4 +1,4 @@
-#testing with https://python.langchain.com/docs/integrations/llms/llamacpp
+#testing with https://python.langchain.com/docs/integratiollms/llamacpp
 
 from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
