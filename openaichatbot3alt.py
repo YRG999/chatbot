@@ -1,4 +1,5 @@
 # openaichatbot3alt.py
+# **latest version**
 # Chat with GPT model with history with the ability to save and clear history
 # appends 2 random characters to file (no datetime)
 

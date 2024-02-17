@@ -51,3 +51,8 @@ Install the requirements
 * [Ollama models](doc/ollama_models.md)
 * [Chatbot_notes1](doc/Chatbot_notes1.md)
 * [Chatbot_notes2](doc/Chatbot_notes2.md)
+
+# links
+* [leaderboard](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)
+* [chatbot arena](https://chat.lmsys.org/?arena)
+* [ollama.ai](https://ollama.ai/) | [Github](https://github.com/jmorganca/ollama)
