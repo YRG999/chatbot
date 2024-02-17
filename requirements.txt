@@ -12,3 +12,4 @@ ollama
 # https://python.langchain.com/docs/integrations/llms/llamacpp#installation-with-metal
 huggingface-hub
 langchain
+anthropic
